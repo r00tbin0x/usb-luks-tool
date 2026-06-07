@@ -15,24 +15,3 @@ Especially useful when a LUKS USB drive refuses to safely eject because of `gvfs
 * Cleans up common desktop-service locks such as `gvfsd-metadata`
 * Early sudo prompt
 
-### Installation
-
-```bash
-# Download
-curl -L -o ~/bin/usb-luks-tool https://raw.githubusercontent.com/YOURUSERNAME/usb-luks-tool/main/usb-luks-tool
-
-# Make executable
-chmod +x ~/bin/usb-luks-tool
-
-# Add ~/bin to PATH (if not already)
-echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
-```
-
-### Usage
-
-```bash
-usb-luks-tool
-```
-
-Select the LUKS device you want to release, review the warnings, and confirm the action. The script will identify and terminate processes preventing the encrypted USB drive from being safely unmounted, locked, or ejected.
