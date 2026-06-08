@@ -63,6 +63,10 @@ if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
     exit 0
 fi
 
+# Sync before killing processes
+echo "Syncing file systems..."
+sync
+
 echo "Killing processes holding it open..."
 
 sudo fuser -vmk "$DEVICE"
